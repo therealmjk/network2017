@@ -9,9 +9,9 @@
 int main(){
 
   char domainName[20];
-	int counter = 0;
+  int counter = 0;
 
-	printf("Enter domain name: ");
+  printf("Enter domain name: ");
   scanf("%s", domainName);
 
   struct hostent *domain = gethostbyname(domainName);
@@ -21,9 +21,7 @@ int main(){
   for(int i = 0; list[i] != NULL; i++) {
     counter = counter + 1;
     printf("Address %d is : %s\n", counter, inet_ntoa(*list[i]));
-  }
+  }  
 
-
-
-	return 0;
+  return 0;
 }
