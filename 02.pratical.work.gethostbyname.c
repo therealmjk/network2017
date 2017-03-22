@@ -8,20 +8,20 @@
 
 int main(){
 
-	char domainName[20];
+  char domainName[20];
 	int counter = 0;
 
 	printf("Enter domain name: ");
-   	scanf("%s", domainName);
+  scanf("%s", domainName);
 
-   	struct hostent *domain = gethostbyname(domainName);
+  struct hostent *domain = gethostbyname(domainName);
 
-   	struct in_addr **list = (struct in_addr **) domain->h_addr_list;
+  struct in_addr **list = (struct in_addr **) domain->h_addr_list;
 
-    for(int i = 0; list[i] != NULL; i++) {
-    	counter = counter + 1;
-        printf("Address %d is : %s\n", counter, inet_ntoa(*list[i]));
-    }
+  for(int i = 0; list[i] != NULL; i++) {
+    counter = counter + 1;
+    printf("Address %d is : %s\n", counter, inet_ntoa(*list[i]));
+  }
 
 
 
