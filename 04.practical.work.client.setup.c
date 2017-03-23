@@ -35,4 +35,6 @@ int main(){
 	if (connect(sockfd, (struct sockaddr *) &saddr, sizeof(saddr)) < 0) {
 		printf("Cannot connect\n");
 	}
+
+	return 0;
 }
