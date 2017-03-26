@@ -57,6 +57,8 @@ int main(){
 			fcntl(clientfd, F_SETFL, fl);
 
 			while(1){
+				memset(buffer, 0, sizeof(buffer));
+				
 				if(recv(clientfd, buffer, sizeof(buffer), 0) > 0){
 					printf("Receive: %s\n", buffer);
 				}
